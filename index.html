@@ -1,117 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website of Siddardha Shayini - Developer, Innovator, and AI Enthusiast. Explore my projects and connect with me.">
+    <meta name="keywords" content="Siddardha Shayini, Portfolio, Developer, AI, Machine Learning, Projects">
+    <meta name="author" content="Siddardha Shayini">
     <title>About Me - Siddardha Shayini</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <!-- Animated Background Section -->
-    <div class="area">
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4e54c8;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .about-section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .about-text h4 {
+            font-size: 1.5rem;
+            color: #4e54c8;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .projects-section {
+            margin-bottom: 50px;
+        }
+
+        .projects-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #4e54c8;
+        }
+
+        .project {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h4 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background: #4e54c8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .project a:hover {
+            background: #393fc1;
+        }
+
+        .contact-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4e54c8;
+        }
+
+        .contact-section a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background: #4e54c8;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .contact-section a:hover {
+            background: #393fc1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4e54c8;
+            color: #fff;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-section img {
+                margin-bottom: 20px;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .about-text h4 {
+                font-size: 1.2rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Siddardha Shayini</h1>
+            <p>A passionate developer and technology enthusiast dedicated to crafting innovative and impactful solutions.</p>
+        </header>
+
+        <section class="about-section">
+            <img src="D:\about-me-page\assets\images\pic.jpg" alt="Siddardha Shayini">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <h4>Software Developer | Innovator | AI Enthusiast</h4>
+                <p>
+                    Hi, I’m Siddardha Shayini, a forward-thinking developer with a strong interest in
+                    Artificial Intelligence, Machine Learning, and dynamic web development. I love tackling
+                    complex problems with innovative solutions and creating experiences that leave a lasting impact.
+                </p>
+                <p>
+                    My journey in technology has been fueled by a constant desire to learn and evolve.
+                    Beyond coding, I enjoy exploring emerging tech trends and working on projects that
+                    bridge creativity and technology.
+                </p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <h3>My Projects</h3>
+
+            <div class="project">
+                <h4>Occasion-specific Stylist AI</h4>
+                <p>Personalized fashion recommendations based on event details, helping users choose the perfect attire effortlessly.</p>
+                <a href="https://siddardhashayini.github.io/Occasion-specific-Stylist-AI/" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>FashionMate</h4>
+                <p>A web app showcasing the latest fashion trends and enabling users to create personal style boards.</p>
+                <a href="https://siddardhashayini.github.io/FashionMate/" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>Expense Tracker</h4>
+                <p>Manage your finances effectively with this easy-to-use income and expense tracking app.</p>
+                <a href="https://siddardhashayini.github.io/Expense-Tracker/" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>Interior Design Showcase</h4>
+                <p>Browse stylish interior design ideas to inspire and enhance your living spaces.</p>
+                <a href="https://github.com/SiddardhaShayini/interior_design_showcase" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>Flashcard App</h4>
+                <p>A flashcard app designed for efficient learning and memorization, featuring customizable cards and export options.</p>
+                <a href="https://siddardhashayini.github.io/Flashcard-App/" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>Movie Recommendation System</h4>
+                <p>Suggests movies based on user preferences using the Nearest Neighbors algorithm for personalized recommendations.</p>
+                <a href="https://github.com/SiddardhaShayini/Movie-Recommendation-System" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>Flutter Experiments</h4>
+                <p>Showcasing Flutter concepts like animations, API integration, and responsive design through interactive examples.</p>
+                <a href="https://github.com/SiddardhaShayini/flutter_experiments" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>Medical Data AI - Vault</h4>
+                <p>A scalable graph database system designed for secure healthcare data management with AI-powered insights.</p>
+                <a href="https://github.com/SiddardhaShayini/MedicalDataAI-Vault" target="_blank">Explore</a>
+            </div>
+
+            <div class="project">
+                <h4>Life's Odyssey (Book)</h4>
+                <p>A reflection on life’s journey, celebrating growth, relationships, and the legacy we create through our choices.</p>
+                <a href="https://siddardhashayini.github.io/Life-s-Odyssey-A-Journey-of-Love-Growth-and-Legacy/" target="_blank">Explore</a>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h3>Contact Me</h3>
+            <a href="mailto:siddardhashayini9@gmail.com">Gmail</a>
+            <a href="https://www.linkedin.com/in/siddardha-shayini-734639317/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/SiddardhaShayini" target="_blank">GitHub</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Siddardha Shayini. All rights reserved.</p>
+        </footer>
     </div>
-
-    <!-- About Me Section -->
-    <center><h1>Siddardha Shayini</h1></center>
-    <section class="about-me">
-      <div class="about">
-        <img src='assets\images\pic.jpg' class="pic" alt="Profile Picture" />
-        <div class="text">
-          <h2>About Me</h2>
-          <h5>Developer</h5>
-          <p>Hello, I’m Siddardha Shayini, a passionate developer with a keen interest in creating visually appealing, user-friendly websites. I am constantly exploring the latest technologies to enhance my skill set and deliver impactful projects. I’m particularly interested in <span>Artificial Intelligence, Machine Learning,</span> and <span>innovative software development</span>.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-me">
-        <div>
-            <h3>Occasion-specific Stylist AI</h3>
-            <p>The Occasion-specific Stylist AI project aims to provide personalized fashion recommendations based on various occasions. Users can input details about the event, and the AI will suggest outfits that suit the occasion, making it easier to choose the right attire.</p>
-            <a href="https://siddardhashayini.github.io/Occasion-specific-Stylist-AI/" target="_blank" class="explore-button">Explore</a>
-        </div>
-    </section>
-
-    <section class="about-me">
-        <div>
-            <h3>FashionMate</h3>
-            <p>FashionMate is a web project that uses HTML5, CSS3, JavaScript, and Node.js with Express to create a dynamic and interactive web application. It allows users to explore the latest fashion trends, create personal style boards, and share their favorite looks.</p>
-            <a href="https://siddardhashayini.github.io/FashionMate/" target="_blank" class="explore-button">Explore</a>
-        </div>
-    </section>
-
-    <section class="about-me">
-        <div>
-            <h3>Expense Tracker</h3>
-            <p>A user-friendly expense tracker application designed to help you manage your finances effectively. The application includes features for tracking income and expenses, viewing transaction history, and generating financial summaries to help you stay on budget.</p>
-            <a href="https://siddardhashayini.github.io/Expense-Tracker/" target="_blank" class="explore-button">Explore</a>
-        </div>
-    </section>
-
-    <section class="about-me">
-        <div>
-            <h3>Interior Design Showcase</h3>
-            <p>Welcome to the Interior Design Showcase project! This application allows users to explore various interior design ideas and inspirations through a stylish and interactive web interface. Users can browse different styles and find ideas to enhance their living spaces.</p>
-            <a href="https://github.com/SiddardhaShayini/interior_design_showcase" target="_blank" class="explore-button">Explore</a>
-        </div>
-    </section>
-
-    <section class="about-me">
-        <div>
-            <h3>Flashcard App</h3>
-            <p>A versatile and user-friendly flashcard application designed to help users learn and memorize information efficiently. The app allows users to create, view, and manage their flashcards, and supports exporting flashcards in various formats for easy sharing and studying.</p>
-            <a href="https://siddardhashayini.github.io/Flashcard-App/" target="_blank" class="explore-button">Explore</a>
-        </div>
-    </section>
-
-    <section class="about-me">
-        <div>
-            <h3>Movie Recommendation System</h3>
-            <p>This project is a simple Movie Recommendation System that suggests movies based on similarity to a given movie, using the Nearest Neighbors algorithm. It analyzes user preferences and provides tailored suggestions to enhance your movie-watching experience.</p>
-            <a href="https://github.com/SiddardhaShayini/Movie-Recommendation-System" target="_blank" class="explore-button">Explore</a>
-        </div>
-    </section>
-
-    <section class="about-me">
-      <div>
-          <h3>Flutter Experiments</h3>
-          <p>This project demonstrates various Flutter concepts, including custom widgets, animations, responsive design, and API integration, through practical experiments and interactive UI examples.</p>
-          <a href="https://github.com/SiddardhaShayini/flutter_experiments" target="_blank" class="explore-button">Explore</a>
-      </div>
-    </section>
-
-    <section class="about-me">
-      <div>
-          <h3>Medical Data AI - Vault</h3>
-          <p>MedicalDataAI-Vault is a scalable and secure graph database system designed to efficiently manage and analyze healthcare records, leveraging AI to improve data insights and decision-making in the healthcare industry.</p>
-          <a href="https://github.com/SiddardhaShayini/MedicalDataAI-Vault" target="_blank" class="explore-button">Explore</a>
-      </div>
-    </section>
-
-    <section class="about-me">
-      <div>
-          <h3>Life's Odyssey (Book)</h3>
-          <p>"Life's Odyssey: A Journey of Love, Growth, and Legacy" celebrates the unique stories we each create through our experiences, relationships, and choices. This journey of reflection, inspiration, and discovery highlights the richness of the human experience.</p>
-          <a href="https://siddardhashayini.github.io/Life-s-Odyssey-A-Journey-of-Love-Growth-and-Legacy/" target="_blank" class="explore-button">Explore</a>
-      </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Siddardha Shayini. All rights reserved.</p>
-    </footer>
-    
-  </body>
+</body>
 </html>
