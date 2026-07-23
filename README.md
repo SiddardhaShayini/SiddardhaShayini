@@ -17,9 +17,9 @@ I'm an **AI/ML Engineer** passionate about building applied AI systems and real-
 
 ### 🛠️ Tech Stack & Skills
 
-* **Languages:** Python, JavaScript, Java, C, C++, SQL[cite: 1]
-* **AI/ML & Vision:** LLMs, RAG, LangChain, TensorFlow, scikit-learn, YOLOv12n, BoT-SORT, Kalman Filter, Vector Embeddings[cite: 1]
-* **Frameworks & Databases:** Flask, Streamlit, Node.js, Git/GitHub, SQLite, Vector Databases[cite: 1]
+* **Languages:** Python, JavaScript, Java, C, C++, SQL
+* **AI/ML & Vision:** LLMs, RAG, LangChain, TensorFlow, scikit-learn, YOLOv12n, BoT-SORT, Kalman Filter, Vector Embeddings
+* **Frameworks & Databases:** Flask, Streamlit, Node.js, Git/GitHub, SQLite, Vector Databases
 
 ---
 
