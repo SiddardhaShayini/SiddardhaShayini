@@ -1,16 +1,25 @@
-# Hi, I’m @SiddardhaShayini 👋
+# Hi, I’m Siddardha Shayini 👋
 
-I’m a Computer Science (AI & ML) student passionate about building **applied AI systems** and **real-world, socially impactful software**.
+I'm an **AI/ML Engineer** passionate about building applied AI systems and real-world, socially impactful software.
 
-- 👀 Interests: **Applied AI**, **Machine Learning**, **LLMs**, **NLP**, **Data Science**, and **Software Development**
-- 🧠 Experience with **Retrieval-Augmented Generation (RAG)**, **LangChain**, and **LLM-powered conversational AI**
-- 🔬 Built projects like **JivanMitra** – an offline, voice-only AI caretaker for elders
-- 💼 Hands-on experience through **AI internships** in forecasting and environmental analytics
-- 🤝 Open to collaborating on **AI/ML**, **LLM systems**, **data-driven applications**, and **open-source projects**
+---
 
-📫 Reach me at:  
-- Email: [siddardhashayini9@gmail.com](mailto:siddardhashayini9@gmail.com)  
-- LinkedIn: [Siddardha Shayini](https://www.linkedin.com/in/siddardha-shayini-734639317)
+### 🧠 About Me
+
+* 💼 **Role:** AI/ML Engineer specializing in Generative AI, Computer Vision, and Time-Series Forecasting.
+* 🔬 **Core Expertise:** Building scalable systems with Retrieval-Augmented Generation (RAG), LangChain, and LLM-powered conversational AI.
+* 🚀 **Featured Projects:**
+  * **JivanMitra:** An offline, voice-only AI caretaker for elders using LangChain and local RAG.
+  * **WildGuardAI:** Real-time wildlife conflict prediction system powered by YOLOv12n, BoT-SORT, and Kalman Filter (*IEEE Xplore Published, 2026*).
+* 👀 **Interests:** Applied AI, LLMs, NLP, Computer Vision, MLOps, and Data Science.
+
+---
+
+### 🛠️ Tech Stack & Skills
+
+* **Languages:** Python, JavaScript, Java, C, C++, SQL[cite: 1]
+* **AI/ML & Vision:** LLMs, RAG, LangChain, TensorFlow, scikit-learn, YOLOv12n, BoT-SORT, Kalman Filter, Vector Embeddings[cite: 1]
+* **Frameworks & Databases:** Flask, Streamlit, Node.js, Git/GitHub, SQLite, Vector Databases[cite: 1]
 
 ---
 
