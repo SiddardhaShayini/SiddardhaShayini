@@ -5,6 +5,7 @@
     <meta name="google-site-verification" content="vfB5-6aNPeCdgRhVq7lwLp6m3r-Hp0jB-2Nk0LUpFrs" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#12160f">
 
     <!-- Primary Metadata -->
     <title>Siddardha Shayini | AI/ML Engineer & Software Developer Portfolio</title>
@@ -13,16 +14,15 @@
     <meta name="author" content="Siddardha Shayini">
 
     <!-- Favicon (Browser Tab) -->
-    <link rel="icon" type="image/jpeg" href="assets/images/pic.jpg">
+    <link rel="icon" type="image/png" href="/assets/images/pic_favicon.png">
 
     <!-- WhatsApp & Facebook Open Graph Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://siddardhashayini.github.io/SiddardhaShayini/">
     <meta property="og:title" content="Siddardha Shayini | AI/ML Engineer & Software Developer">
     <meta property="og:description" content="Explore AI/ML projects, GenAI & RAG implementations, dynamic web apps, and published research by Siddardha Shayini.">
-    <!-- ABSOLUTE HTTPS URL FOR WHATSAPP -->
-    <meta property="og:image" content="https://siddardhashayini.github.io/SiddardhaShayini/assets/images/pic.jpg">
-    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image" content="https://siddardhashayini.github.io/SiddardhaShayini/assets/images/picture.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
 
@@ -30,398 +30,1221 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Siddardha Shayini | AI/ML Engineer & Software Developer">
     <meta name="twitter:description" content="Explore AI/ML projects, GenAI & RAG implementations, dynamic web apps, and published research by Siddardha Shayini.">
-    <meta name="twitter:image" content="https://siddardhashayini.github.io/SiddardhaShayini/assets/images/pic.jpg">
+    <meta name="twitter:image" content="https://siddardhashayini.github.io/SiddardhaShayini/assets/images/picture.png">
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Siddardha Shayini",
+      "jobTitle": "AI/ML Engineer",
+      "url": "https://siddardhashayini.github.io/",
+      "sameAs": [
+        "https://github.com/SiddardhaShayini",
+        "https://www.linkedin.com/in/siddardha-shayini-734639317/",
+        "https://scholar.google.com/citations?hl=en&user=eQvxPZIAAAAJ",
+        "https://orcid.org/0009-0002-6909-073X",
+        "https://ieeexplore.ieee.org/author/626245326465493"
+      ]
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+        :root {
+            --bg: #12160f;
+            --panel: #1a2116;
+            --panel-2: #202819;
+            --line: #2c3524;
+            --amber: #dd9152;
+            --amber-dim: #96633a;
+            --moss: #93ab7c;
+            --ink: #efe7d8;
+            --ink-dim: #8f978a;
+            --radius: 3px;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            background: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-            padding: 0 20px;
+            background:
+                radial-gradient(circle at 1px 1px, rgba(147,171,124,0.10) 1px, transparent 0) 0 0/28px 28px,
+                var(--bg);
+            color: var(--ink);
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        a { color: inherit; }
+
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+        .eyebrow {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--moss);
         }
 
-        .header {
-            text-align: center;
-            padding: 50px 0;
+        .mono { font-family: 'IBM Plex Mono', monospace; }
+
+        /* ---------- Nav ---------- */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(18, 22, 15, 0.86);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
         }
 
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #4e54c8;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: #555;
-        }
-
-        .about-section {
+        .nav-inner {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            padding: 16px 28px;
+            max-width: 1120px;
+            margin: 0 auto;
         }
 
-        .about-section img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 12px;
-            margin-right: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .nav-mark {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            color: var(--ink);
+            text-decoration: none;
         }
 
-        .about-text {
-            flex: 1;
+        .nav-mark span { color: var(--amber); }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            list-style: none;
         }
 
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #333;
+        .nav-links a {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ink-dim);
+            transition: color 0.2s ease;
         }
 
-        .about-text h4 {
-            font-size: 1.5rem;
-            color: #4e54c8;
-            margin-bottom: 20px;
+        .nav-links a:hover, .nav-links a:focus-visible { color: var(--amber); }
+
+        .nav-cta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--bg);
+            background: var(--amber);
+            padding: 8px 14px;
+            border-radius: var(--radius);
+            white-space: nowrap;
+            transition: background 0.2s ease;
         }
 
-        .about-text p {
+        .nav-cta:hover, .nav-cta:focus-visible { background: #eaa268; }
+
+        .nav-toggle { display: none; }
+
+        @media (max-width: 760px) {
+            .nav-links { display: none; }
+            .nav-toggle {
+                display: block;
+                background: none;
+                border: 1px solid var(--line);
+                color: var(--ink);
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 0.7rem;
+                padding: 8px 10px;
+                border-radius: var(--radius);
+            }
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            padding: 96px 0 64px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .status-line {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-dim);
+            border: 1px solid var(--line);
+            padding: 6px 12px;
+            border-radius: 999px;
+            margin-bottom: 28px;
+        }
+
+        .dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--amber);
+            animation: pulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(221,145,82,0.5); }
+            50% { opacity: 0.55; box-shadow: 0 0 0 5px rgba(221,145,82,0); }
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: clamp(2.6rem, 6vw, 4.4rem);
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 em { font-style: italic; font-weight: 400; color: var(--moss); }
+
+        .hero .lede {
+            max-width: 640px;
             font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            color: var(--ink-dim);
+            margin-bottom: 34px;
         }
 
-        .projects-section {
-            margin-bottom: 50px;
+        .hero .lede strong { color: var(--ink); font-weight: 500; }
+
+        .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px; }
+
+        .btn {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .projects-section h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #4e54c8;
+        .btn-primary { background: var(--amber); color: var(--bg); }
+        .btn-primary:hover, .btn-primary:focus-visible { background: #eaa268; transform: translateY(-1px); }
+
+        .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+        .btn-ghost:hover, .btn-ghost:focus-visible { border-color: var(--moss); color: var(--moss); }
+
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .project {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .stat-chip {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            color: var(--ink-dim);
+            border-left: 2px solid var(--moss);
+            padding: 4px 0 4px 10px;
         }
 
-        .project h4 {
-            font-size: 1.5rem;
-            color: #333;
+        .stat-chip b { color: var(--ink); font-weight: 500; }
+
+        /* ---------- Sections generic ---------- */
+        section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+
+        .sec-head { margin-bottom: 40px; }
+
+        .sec-head .eyebrow { margin-bottom: 10px; display: block; }
+
+        .sec-head h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: clamp(1.7rem, 3vw, 2.3rem);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .dot { animation: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ---------- About ---------- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 44px;
+            align-items: start;
+        }
+
+        .field-frame {
+            position: relative;
+            border: 1px solid var(--line);
+            padding: 10px;
+            background: var(--panel);
+        }
+
+        .field-frame::before {
+            content: "SPEC. 01";
+            position: absolute;
+            top: -10px; left: 10px;
+            background: var(--bg);
+            padding: 0 6px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            color: var(--moss);
+        }
+
+        .field-frame img {
+            width: 100%;
+            display: block;
+            filter: grayscale(15%) contrast(1.02);
+        }
+
+        .about-text p { color: var(--ink-dim); margin-bottom: 16px; max-width: 60ch; }
+        .about-text p strong { color: var(--ink); font-weight: 500; }
+
+        .aside-note {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px dashed var(--line);
+            font-size: 0.92rem;
+            color: var(--ink-dim);
+        }
+
+        .aside-note a { color: var(--moss); text-decoration: underline; text-underline-offset: 3px; }
+
+        @media (max-width: 720px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .field-frame { max-width: 240px; }
+        }
+
+        /* ---------- Experience ---------- */
+        .log-entry {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 20px;
+            padding: 26px 0;
+            border-top: 1px solid var(--line);
+        }
+        .log-entry:last-child { border-bottom: 1px solid var(--line); }
+
+        .log-index {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--amber);
+            padding-top: 3px;
+        }
+
+        .log-entry h3 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+
+        .log-meta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            color: var(--ink-dim);
             margin-bottom: 10px;
         }
 
-        .project p {
-            margin-bottom: 15px;
+        .log-meta .todo { color: var(--amber-dim); border-bottom: 1px dashed var(--amber-dim); }
+
+        .log-entry p { color: var(--ink-dim); max-width: 62ch; font-size: 0.95rem; }
+        .log-entry p .todo { color: var(--amber-dim); border-bottom: 1px dashed var(--amber-dim); }
+
+        @media (max-width: 560px) {
+            .log-entry { grid-template-columns: 1fr; gap: 6px; }
         }
 
-        .project a {
-            display: inline-block;
+        /* ---------- Skills ---------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+        }
+
+        .skill-group .eyebrow { margin-bottom: 12px; display: block; }
+
+        .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+        .chip {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.76rem;
+            padding: 6px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink-dim);
+        }
+
+        /* ---------- Featured / Case files ---------- */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .case-card {
+            position: relative;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 26px 24px 24px;
+            border-radius: var(--radius);
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .case-card:hover { border-color: var(--moss); transform: translateY(-3px); }
+
+        .case-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .case-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--amber); }
+
+        .case-status {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--moss);
+            border: 1px solid var(--line);
+            padding: 3px 8px;
+            border-radius: 999px;
+        }
+
+        .case-card h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .case-card p { color: var(--ink-dim); font-size: 0.94rem; margin-bottom: 18px; }
+
+        .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+
+        .tag {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--ink-dim);
+            background: var(--panel-2);
+            padding: 4px 9px;
+            border-radius: var(--radius);
+        }
+
+        .case-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
             text-decoration: none;
-            color: #fff;
-            background: #4e54c8;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            color: var(--ink);
+            border-bottom: 1px solid var(--amber);
+            padding-bottom: 2px;
+        }
+        .case-link:hover { color: var(--amber); }
+
+        @media (max-width: 760px) { .case-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- Archive ---------- */
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
         }
 
-        .project a:hover {
-            background: #393fc1;
+        .filter-btn {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: none;
+            border: 1px solid var(--line);
+            color: var(--ink-dim);
+            padding: 8px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .contact-section {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            text-align: center;
+        .filter-btn:hover { border-color: var(--moss); color: var(--ink); }
+        .filter-btn.active { background: var(--moss); border-color: var(--moss); color: var(--bg); }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
-        .contact-section h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #4e54c8;
+        .arc-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 18px;
+            border-radius: var(--radius);
+            transition: border-color 0.2s ease, transform 0.2s ease;
         }
 
-        .contact-section a {
-            display: inline-block;
+        .arc-card:hover { border-color: var(--amber-dim); transform: translateY(-2px); }
+        .arc-card.hidden { display: none; }
+
+        .arc-cat {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--moss);
+            margin-bottom: 8px;
+        }
+
+        .arc-card h4 { font-size: 0.98rem; font-weight: 600; margin-bottom: 8px; line-height: 1.35; }
+        .arc-card p { font-size: 0.85rem; color: var(--ink-dim); margin-bottom: 14px; }
+
+        .arc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+        .arc-tags .tag { font-size: 0.62rem; padding: 3px 7px; }
+
+        .arc-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
             text-decoration: none;
-            color: #fff;
-            background: #4e54c8;
-            padding: 10px 20px;
-            margin: 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            color: var(--amber);
+        }
+        .arc-link:hover { color: #eaa268; }
+
+        @media (max-width: 900px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .archive-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- Research & Contact ---------- */
+        .link-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            text-decoration: none;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            padding: 11px 18px;
+            border-radius: 999px;
+            font-size: 0.92rem;
+            transition: all 0.2s ease;
         }
 
-        .contact-section a:hover {
-            background: #393fc1;
+        .pill:hover { border-color: var(--amber); color: var(--amber); transform: translateY(-2px); }
+        .pill img { width: 18px; height: 18px; }
+
+        .sub-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-dim);
+            margin: 28px 0 12px;
+        }
+        .sub-label:first-child { margin-top: 0; }
+
+        /* ---------- Hero social badges ---------- */
+        .hero-social-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
         }
 
+        .hero-social-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            text-decoration: none;
+            color: var(--ink-dim);
+            border: 1px solid var(--line);
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.04em;
+            transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            background: transparent;
+        }
+
+        .hero-social-badge img {
+            width: 15px;
+            height: 15px;
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
+        }
+
+        .hero-social-badge:hover {
+            color: var(--amber);
+            border-color: var(--amber-dim);
+            transform: translateY(-2px);
+        }
+
+        .hero-social-badge:hover img { opacity: 1; }
+
+        /* ---------- Theme toggle ---------- */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--line);
+            color: var(--ink-dim);
+            border-radius: var(--radius);
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border-color 0.2s ease, color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle:hover { border-color: var(--amber); color: var(--amber); }
+        .theme-toggle svg { display: block; }
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: block; }
+
+        /* ---------- Light mode ---------- */
+        body.light {
+            --bg: #f5f1eb;
+            --panel: #ffffff;
+            --panel-2: #ede9e2;
+            --line: #cfc8bc;
+            --amber: #b8702c;
+            --amber-dim: #a0683a;
+            --moss: #4d6e31;
+            --ink: #1c1a14;
+            --ink-dim: #5e5a52;
+            background:
+                radial-gradient(circle at 1px 1px, rgba(77,110,49,0.07) 1px, transparent 0) 0 0/28px 28px,
+                var(--bg);
+        }
+
+        body.light .nav {
+            background: rgba(245,241,235,0.88);
+        }
+
+        body.light .theme-toggle .icon-sun { display: block; }
+        body.light .theme-toggle .icon-moon { display: none; }
+
+        body.light .nav-cta { color: #f5f1eb; }
+
+        /* ---------- Footer ---------- */
         footer {
+            padding: 32px 0;
             text-align: center;
-            padding: 20px;
-            background: #4e54c8;
-            color: #fff;
-            margin-top: 50px;
-            border-radius: 10px;
         }
 
         footer p {
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .about-section img {
-                margin-bottom: 20px;
-            }
-
-            .about-text h2 {
-                font-size: 2rem;
-            }
-
-            .about-text h4 {
-                font-size: 1.2rem;
-            }
-
-            .about-text p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .header p {
-                font-size: 1rem;
-            }
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            color: var(--ink-dim);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Siddardha Shayini</h1>
-            <p>AI/ML Engineer and Software Developer specializing in Generative AI, Computer Vision, and full-stack web applications—passionate about transforming complex data into impactful, real-world solutions.</p>
-        </header>
+<body class="light">
 
-        <section class="about-section">
-            <img src="assets\images\pic.jpg" class="pic" alt="Siddardha Shayini">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <h4>Software Developer | AI/ML Engineer | Innovator</h4>
-                <p>
-                    Hi, I’m Siddardha Shayini, a forward-thinking developer with hands-on experience building real-world AI, Machine Learning, and dynamic web applications. From deploying Generative AI systems with LangChain and RAG to designing real-time Computer Vision solutions like WildGuardAI (published in IEEE Xplore), I turn complex technical challenges into practical, user-focused products.
-                </p>
-                <p>
-                    My journey in technology is driven by continuous learning and execution—having delivered 15+ projects and multiple AI engineering internships. Beyond writing code, I love exploring emerging tech trends, building intelligent systems, and bridging the gap between cutting-edge AI and seamless software experiences.
-                </p>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="nav-mark">SIDDARDHA<span>.</span>SHAYINI</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#archive">Archive</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour mode">
+                    <!-- moon = shown in dark mode -->
+                    <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <!-- sun = shown in light mode -->
+                    <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+                <a href="/assets/resume.pdf" class="nav-cta" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <section class="projects-section">
-            <h3>My Projects</h3>
+    <div id="top"></div>
 
-            <div class="project">
-                <h4>WildGuardAI: Real-Time Wildlife Conflict Prediction</h4>
-                <p>WildGuardAI predicts human–wildlife conflict in real time by analyzing animal detection, movement, proximity, and behavior, enabling proactive intervention before dangerous encounters occur.</p>
-                <a href="https://github.com/SiddardhaShayini/WildGuardAI-Real-Time-Wildlife-Conflict-Prediction" target="_blank">Explore</a>
+    <header class="hero">
+        <div class="wrap">
+            <div class="status-line"><span class="dot"></span> Open to AI/ML engineering roles &middot; Hyderabad, IN</div>
+            <h1>Siddardha Shayini<br><em>builds systems that notice things.</em></h1>
+            <p class="lede">
+                I'm an AI/ML engineer working across <strong>computer vision</strong> and <strong>generative AI</strong> —
+                from a real-time wildlife-conflict detection system published in IEEE Xplore, to offline-first AI
+                companions that don't depend on a network connection. I care more about whether a system holds up
+                under real conditions than whether the demo looks good.
+            </p>
+            <div class="cta-row">
+                <a href="/assets/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                <a href="#work" class="btn btn-ghost">View Case Files</a>
+            </div>
+            <div class="hero-social-row">
+                <a href="https://github.com/SiddardhaShayini" target="_blank" rel="noopener noreferrer" class="hero-social-badge">
+                    <img src="/assets/icons/github.svg" alt="GitHub"> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/siddardha-shayini-734639317/" target="_blank" rel="noopener noreferrer" class="hero-social-badge">
+                    <img src="/assets/icons/linkedin.svg" alt="LinkedIn"> LinkedIn
+                </a>
+                <a href="https://ieeexplore.ieee.org/author/626245326465493" target="_blank" rel="noopener noreferrer" class="hero-social-badge">
+                    <img src="/assets/icons/ieee.svg" alt="IEEE Xplore"> IEEE Xplore
+                </a>
+                <a href="https://scholar.google.com/citations?hl=en&user=eQvxPZIAAAAJ" target="_blank" rel="noopener noreferrer" class="hero-social-badge">
+                    <img src="/assets/icons/googlescholar.svg" alt="Google Scholar"> Google Scholar
+                </a>
+                <a href="https://orcid.org/0009-0002-6909-073X" target="_blank" rel="noopener noreferrer" class="hero-social-badge">
+                    <img src="/assets/icons/orcid.svg" alt="ORCID"> ORCID
+                </a>
+            </div>
+            <br>
+            <div class="stat-row">
+                <div class="stat-chip"><b>24</b> projects logged</div>
+                <div class="stat-chip"><b>1</b> IEEE Xplore publication</div>
+                <div class="stat-chip"><b>5</b> internships</div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="wrap">
+            <div class="about-grid reveal">
+                <div class="field-frame">
+                    <img src="/assets/images/picture.png" alt="Siddardha Shayini">
+                </div>
+                <div class="about-text">
+                    <span class="eyebrow">About</span>
+                    <h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:1.9rem;margin:10px 0 18px;">Software developer, AI/ML engineer</h2>
+                    <p>
+                        I graduated with a B.Tech in CSE (AI &amp; ML) from Vignan Institute of Technology and Science,
+                        Hyderabad, and I'm currently looking for my first full-time role in AI/ML engineering.
+                        <strong>WildGuardAI</strong>, my flagship project, predicts human&ndash;wildlife conflict in real
+                        time by analyzing detection, movement, and proximity from camera-trap-style footage — the work
+                        was published in IEEE Xplore.
+                    </p>
+                    <p>
+                        Most of what I build tries to work with real constraints: <strong>JivanMitra</strong> and my
+                        research-agent projects run fully offline, because I'm more interested in systems that hold up
+                        without a safety net than ones that only work with an API key and a stable connection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="eyebrow">Field Record</span>
+                <h2>Experience</h2>
+            </div>
+            <div class="reveal">
+                <div class="log-entry">
+                    <div class="log-index">EDU</div>
+                    <div>
+                        <h3>B.Tech, CSE (AI &amp; ML)</h3>
+                        <div class="log-meta">Vignan Institute of Technology and Science, Hyderabad &middot; 2022&ndash;2026 &middot; CGPA 7.72/10.00</div>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <div class="log-index">LOG-01</div>
+                    <div>
+                        <h3>AIML Intern &mdash; Elevate Labs</h3>
+                        <div class="log-meta">May 2025 &ndash; Jun 2025 &middot; Remote</div>
+                        <p>Contributed to hands-on AI/ML projects and tasks, building practical experience across the model development workflow.</p>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <div class="log-index">LOG-02</div>
+                    <div>
+                        <h3>Web Development Intern &mdash; CollegeTips.in</h3>
+                        <div class="log-meta">Apr 2025 &ndash; May 2025 &middot; Remote</div>
+                        <p>Built interactive web platform features and visual content. Researched AI-driven ideas for recruitment tools and chatbots, and wrote reports and content for the platform.</p>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <div class="log-index">LOG-03</div>
+                    <div>
+                        <h3>AI Engineer Intern &mdash; Infosys Springboard</h3>
+                        <div class="log-meta">Feb 2025 &ndash; Apr 2025 &middot; Remote</div>
+                        <p>Built a smart electricity demand &amp; price forecasting system using Facebook Prophet time-series models, reaching ~95% accuracy on real market datasets. Developed the Flask backend and a Tailwind-styled UI for dynamic date-range inputs with real-time forecast visualization.</p>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <div class="log-index">LOG-04</div>
+                    <div>
+                        <h3>AI Engineer Intern &mdash; YBI Foundation</h3>
+                        <div class="log-meta">Dec 2024 &ndash; Jun 2025 &middot; Remote</div>
+                        <p>Developed an Air Quality Prediction System for Indian cities using Random Forest Regression on PM2.5, PM10, and NOx pollutant data, reaching ~96% AQI category accuracy. Built interactive CLI visualizations and data pipelines across multiple city datasets.</p>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <div class="log-index">LOG-05</div>
+                    <div>
+                        <h3>Python Developer &mdash; YBI Foundation</h3>
+                        <div class="log-meta">Oct 2024 &middot; Remote</div>
+                        <p>Built a movie recommendation engine suggesting personalized picks based on user preferences and historical data &mdash; the earliest version of what's now the Movie Recommendation System project in the archive below.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="eyebrow">Instrumentation</span>
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-grid reveal">
+                <div class="skill-group">
+                    <span class="eyebrow">Languages</span>
+                    <div class="chip-row">
+                        <span class="chip">Python</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">Java</span>
+                        <span class="chip">C</span>
+                        <span class="chip">C++</span>
+                        <span class="chip">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="eyebrow">AI / ML</span>
+                    <div class="chip-row">
+                        <span class="chip">TensorFlow</span>
+                        <span class="chip">scikit-learn</span>
+                        <span class="chip">LLMs</span>
+                        <span class="chip">RAG</span>
+                        <span class="chip">NLP</span>
+                        <span class="chip">Prompt Engineering</span>
+                        <span class="chip">Vector Embeddings</span>
+                        <span class="chip">YOLOv12n</span>
+                        <span class="chip">BoT-SORT</span>
+                        <span class="chip">Kalman Filter</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="eyebrow">Frameworks &amp; Tools</span>
+                    <div class="chip-row">
+                        <span class="chip">Flask</span>
+                        <span class="chip">LangChain</span>
+                        <span class="chip">Node.js</span>
+                        <span class="chip">Streamlit</span>
+                        <span class="chip">Git / GitHub</span>
+                        <span class="chip">SQLite</span>
+                        <span class="chip">SQL / NoSQL</span>
+                        <span class="chip">Vector Databases</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="eyebrow">Other</span>
+                    <div class="chip-row">
+                        <span class="chip">REST APIs</span>
+                        <span class="chip">Data Analysis</span>
+                        <span class="chip">Databricks Fundamentals</span>
+                        <span class="chip">Time-Series Forecasting</span>
+                        <span class="chip">Deep Learning</span>
+                        <span class="chip">Flutter (basics)</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="eyebrow">Certifications</span>
+                    <div class="chip-row">
+                        <span class="chip">TCS iON NQT (IT) &mdash; Qualified</span>
+                        <span class="chip">Oracle Agentic AI Foundations Associate</span>
+                        <span class="chip">Oracle Certified Foundations Associate</span>
+                        <span class="chip">NPTEL &mdash; Programming with Generative AI</span>
+                        <span class="chip">Coursera &mdash; Cloud ML Engineering &amp; MLOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="eyebrow">Case Files</span>
+                <h2>Featured Work</h2>
+            </div>
+            <div class="case-grid reveal">
+
+                <div class="case-card">
+                    <div class="case-top">
+                        <span class="case-id">LOG-01 &middot; Aug 2025&ndash;Jun 2026</span>
+                        <span class="case-status">IEEE Xplore &middot; Published</span>
+                    </div>
+                    <h3>WildGuardAI</h3>
+                    <p>Deep learning system using YOLOv12n, BoT-SORT, and a Kalman Filter to detect animals crossing forest boundaries from live camera feeds. Flask backend with SQLite and GPS-based alerting notifies forest officers and villagers before dangerous encounters happen. Published in IEEE Xplore as <em>"Wild Guard AI: Real-Time Wildlife Conflict Prediction"</em> (2026).</p>
+                    <div class="tag-row">
+                        <span class="tag">YOLOv12n</span>
+                        <span class="tag">BoT-SORT</span>
+                        <span class="tag">Kalman Filter</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                    <a class="case-link" href="https://github.com/SiddardhaShayini/WildGuardAI-Real-Time-Wildlife-Conflict-Prediction" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-top">
+                        <span class="case-id">LOG-02 &middot; Jul 2025&ndash;Present</span>
+                        <span class="case-status">Active Development</span>
+                    </div>
+                    <h3>JivanMitra</h3>
+                    <p>Offline, voice-only AI caretaker for elderly users in India. Uses LangChain RAG, LLMs, and NLP to hold context-aware, multilingual conversations in local languages, without depending on a stable internet connection &mdash; built for accessibility, not tech fluency.</p>
+                    <div class="tag-row">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Multilingual</span>
+                    </div>
+                    <a class="case-link" href="https://github.com/SiddardhaShayini/JivanMitra---Offline-First-Intelligent-AI-Assistant-using-RAG-Agents" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-top">
+                        <span class="case-id">LOG-03 &middot; Dec 2025&ndash;Mar 2026</span>
+                        <span class="case-status">Offline Rewrite</span>
+                    </div>
+                    <h3>Offline Deep Research Agent</h3>
+                    <p>A research agent that reads and reasons over documents entirely offline. Rebuilt on Ollama and Mistral after the original API-dependent version proved too fragile for reliable local use.</p>
+                    <div class="tag-row">
+                        <span class="tag">Ollama</span>
+                        <span class="tag">Mistral</span>
+                        <span class="tag">LangChain</span>
+                    </div>
+                    <a class="case-link" href="https://github.com/SiddardhaShayini/Offline-Deep-Research-Agent-using-Ollama-Mistral-and-LangChain" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-top">
+                        <span class="case-id">LOG-04 &middot; Jan&ndash;Apr 2025</span>
+                        <span class="case-status">~93% Accuracy</span>
+                    </div>
+                    <h3>Cyber Crime Forecasting &amp; Analysis in India</h3>
+                    <p>Streamlit dashboard forecasting cybercrime trends across Indian states using ARIMA and Polynomial Regression, reaching ~93% accuracy, to support awareness and policy planning.</p>
+                    <div class="tag-row">
+                        <span class="tag">ARIMA</span>
+                        <span class="tag">Polynomial Regression</span>
+                        <span class="tag">Streamlit</span>
+                    </div>
+                    <a class="case-link" href="https://github.com/SiddardhaShayini/Cyber-Crime-Prediction" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="archive">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="eyebrow">Full Archive</span>
+                <h2>19 More Projects</h2>
             </div>
 
-            <div class="project">
-                <h4>JivanMitra --- Offline-First Intelligent AI Assistant using RAG & Agentic AI</h4>
-                <p>JivanMitra is an offline-first, AI-powered virtual companion designed to provide elderly individuals with intelligent, empathetic, and context-aware conversational support.</p>
-                <a href="https://github.com/SiddardhaShayini/JivanMitra---Offline-First-Intelligent-AI-Assistant-using-RAG-Agents" target="_blank">Explore</a>
+            <div class="filter-row reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cv">Computer Vision</button>
+                <button class="filter-btn" data-filter="genai">GenAI &amp; NLP</button>
+                <button class="filter-btn" data-filter="data">Data &amp; ML</button>
+                <button class="filter-btn" data-filter="web">Web &amp; Apps</button>
             </div>
 
-            <div class="project">
-                <h4>Offline Deep Research Agent using Ollama Mistral and LangChain</h4>
-                <p>A complete rewrite of the original deep research system to use Ollama with mistral instead of external APIs.</p>
-                <a href="https://github.com/SiddardhaShayini/Offline-Deep-Research-Agent-using-Ollama-Mistral-and-LangChain" target="_blank">Explore</a>
-            </div>
+            <div class="archive-grid reveal" id="archiveGrid">
 
-            <div class="project">
-                <h4>Personal Research Assistant – Offline Agentic AI</h4>
-                <p>An offline AI research assistant using RAG, local embeddings, ChromaDB, and Ollama Phi-3 to analyze PDFs with multi-step reasoning and actionable insights.</p>
-                <a href="https://github.com/SiddardhaShayini/Agentic_AI_Project" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="genai">
+                    <div class="arc-cat">GenAI &amp; NLP</div>
+                    <h4>Personal Research Assistant &mdash; Offline Agentic AI</h4>
+                    <p>Offline research assistant using RAG, local embeddings, ChromaDB, and Ollama Phi-3 to analyze PDFs with multi-step reasoning.</p>
+                    <div class="arc-tags"><span class="tag">RAG</span><span class="tag">ChromaDB</span><span class="tag">Ollama</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/Agentic_AI_Project" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>JivanMitra: Your AI Elder Companion</h4>
-                <p>JivanMitra is an empathetic, voice-first AI companion designed to support the elderly in India.</p>
-                <a href="https://github.com/SiddardhaShayini/JivanMitra-An-AI-Elder-Companion" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="genai">
+                    <div class="arc-cat">GenAI &amp; NLP</div>
+                    <h4>JivanMitra: Your AI Elder Companion</h4>
+                    <p>An earlier, voice-first iteration of JivanMitra designed to support elderly users in India.</p>
+                    <div class="arc-tags"><span class="tag">Voice AI</span><span class="tag">LangChain</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/JivanMitra-An-AI-Elder-Companion" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Voice-Controlled Virtual Wheelchair</h4>
-                <p>A voice-controlled virtual wheelchair enabling hands-free navigation through voice commands in an immersive 3D browser environment for improved accessibility and mobility assistance.</p>
-                <a href="https://siddardhashayini.github.io/Voice-Controlled-Wheelchair/" target="_blank">Explore</a>
-            </div>
-            
-            <div class="project">
-                <h4>Visual EEG Pattern Synthesis and Recognition with Deep Learning</h4>
-                <p>This project focuses on analyzing and generating EEG signal patterns using deep learning techniques.</p>
-                <a href="https://github.com/SiddardhaShayini/Visual_EEG_Pattern_Synthesis_and_Recognition_with_Deep_Learning" target="_blank">Explore</a>
-            </div>
-            
-            <div class="project">
-                <h4>2D to 3D Converter</h4>
-                <p>This application converts photos or text prompts into downloadable 3D models using open-source AI/ML libraries.</p>
-                <a href="https://2d-to-3d-converter.streamlit.app/" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>Voice-Controlled Virtual Wheelchair</h4>
+                    <p>Hands-free navigation through voice commands in an immersive 3D browser environment, built for accessibility.</p>
+                    <div class="arc-tags"><span class="tag">Web Speech API</span><span class="tag">3D</span></div>
+                    <a class="arc-link" href="https://siddardhashayini.github.io/Voice-Controlled-Wheelchair/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Pokemon Explorer</h4>
-                <p>A app that lets you explore Pokémon using the PokéAPI. Search, filter, and browse through different Pokémon types and their details.</p>
-                <a href="https://pokemon-explorer.streamlit.app/" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Visual EEG Pattern Synthesis &amp; Recognition</h4>
+                    <p>Analyzes and generates EEG signal patterns using deep learning techniques.</p>
+                    <div class="arc-tags"><span class="tag">Deep Learning</span><span class="tag">Signal Processing</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/Visual_EEG_Pattern_Synthesis_and_Recognition_with_Deep_Learning" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Cyber Crime Forecasting and Analysis in India</h4>
-                <p>A comprehensive dashboard application for analyzing and forecasting cyber crime trends across Indian states with predictions for future years.</p>
-                <a href="https://github.com/SiddardhaShayini/Cyber-Crime-Prediction" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="cv">
+                    <div class="arc-cat">Computer Vision</div>
+                    <h4>2D to 3D Converter</h4>
+                    <p>Converts photos or text prompts into downloadable 3D models using open-source AI/ML libraries.</p>
+                    <div class="arc-tags"><span class="tag">Generative 3D</span><span class="tag">Streamlit</span></div>
+                    <a class="arc-link" href="https://2d-to-3d-converter.streamlit.app/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Electricity Demand & Price Forecasting</h4>
-                <p>It is a user-friendly tool that utilizes machine learning and historical data to predict future electricity demand and price, featuring a modern interface.</p>
-                <a href="https://github.com/SiddardhaShayini/Electricity-Demand-and-Price-Forecasting" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>Pokemon Explorer</h4>
+                    <p>Search, filter, and browse Pok&eacute;mon by type and detail using the Pok&eacute;API.</p>
+                    <div class="arc-tags"><span class="tag">Streamlit</span><span class="tag">REST API</span></div>
+                    <a class="arc-link" href="https://pokemon-explorer.streamlit.app/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Smart Weather Advisor Your Personalized Recommendations</h4>
-                <p>It provides tailored recommendations based on real-time weather conditions to help users make informed decisions.</p>
-                <a href="https://smart-weather-advisor-your-personalized-recommendations-f72zp4.streamlit.app/" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Electricity Demand &amp; Price Forecasting</h4>
+                    <p>Predicts future electricity demand and price from historical data through a modern interface.</p>
+                    <div class="arc-tags"><span class="tag">Forecasting</span><span class="tag">ML</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/Electricity-Demand-and-Price-Forecasting" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Digital Literacy Companion</h4>
-                <p>A user-friendly chatbot designed to help parents and elderly users navigate the digital world with confidence and ease.</p>
-                <a href="https://digital-literacy-companion.streamlit.app/" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Smart Weather Advisor</h4>
+                    <p>Personalized recommendations based on real-time weather conditions to help users make informed decisions.</p>
+                    <div class="arc-tags"><span class="tag">Weather API</span><span class="tag">Streamlit</span></div>
+                    <a class="arc-link" href="https://smart-weather-advisor-your-personalized-recommendations-f72zp4.streamlit.app/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Performance Analysis of Classification Algorithms on Indicators of Heart Disease Dataset</h4>
-                <p>This project analyzes the performance of various classification algorithms using the "Indicators of Heart Disease" dataset. The goal is to evaluate and compare the effectiveness of different algorithms in predicting heart disease.</p>
-                <a href="https://github.com/SiddardhaShayini/Performance-Analysis-of-Classification-Algorithms-on-Indicators-of-Heart-Disease-Dataset" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="genai">
+                    <div class="arc-cat">GenAI &amp; NLP</div>
+                    <h4>Digital Literacy Companion</h4>
+                    <p>A chatbot designed to help parents and elderly users navigate the digital world with confidence.</p>
+                    <div class="arc-tags"><span class="tag">Chatbot</span><span class="tag">Streamlit</span></div>
+                    <a class="arc-link" href="https://digital-literacy-companion.streamlit.app/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Comprehensive Python Implementation for Data Analysis and Machine Learning Algorithms</h4>
-                <p>This project provides an extensive implementation of data analysis and machine learning algorithms using Python. It serves as a learning resource and a practical toolkit for understanding and applying various techniques in the domain of machine learning and data science.</p>
-                <a href="https://github.com/SiddardhaShayini/Comprehensive-Python-Implementation-for-Data-Analysis-and-Machine-Learning-Algorithms" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Classification Algorithms on Heart Disease Indicators</h4>
+                    <p>Evaluates and compares classification algorithms on the Indicators of Heart Disease dataset.</p>
+                    <div class="arc-tags"><span class="tag">Classification</span><span class="tag">scikit-learn</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/Performance-Analysis-of-Classification-Algorithms-on-Indicators-of-Heart-Disease-Dataset" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Movie Recommendation System</h4>
-                <p>Suggests movies based on user preferences using the Nearest Neighbors algorithm for personalized recommendations.</p>
-                <a href="https://github.com/SiddardhaShayini/Movie-Recommendation-System" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Data Analysis &amp; ML Algorithms in Python</h4>
+                    <p>A reference implementation of core data analysis and machine learning algorithms in Python.</p>
+                    <div class="arc-tags"><span class="tag">Python</span><span class="tag">ML</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/Comprehensive-Python-Implementation-for-Data-Analysis-and-Machine-Learning-Algorithms" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>FashionMate</h4>
-                <p>A web app showcasing the latest fashion trends and enabling users to create personal style boards.</p>
-                <a href="https://siddardhashayini.github.io/FashionMate/" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Movie Recommendation System</h4>
+                    <p>Suggests movies based on user preferences using the Nearest Neighbors algorithm.</p>
+                    <div class="arc-tags"><span class="tag">Recommender Systems</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/Movie-Recommendation-System" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Medical Data AI - Vault</h4>
-                <p>A scalable graph database system designed for secure healthcare data management with AI-powered insights.</p>
-                <a href="https://github.com/SiddardhaShayini/MedicalDataAI-Vault" target="_blank">Explore</a>
-            </div>
-            
-            <div class="project">
-                <h4>Occasion-specific Stylist AI</h4>
-                <p>Personalized fashion recommendations based on event details, helping users choose the perfect attire effortlessly.</p>
-                <a href="https://siddardhashayini.github.io/Occasion-specific-Stylist-AI/" target="_blank">Explore</a>
-            </div>
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>FashionMate</h4>
+                    <p>Showcases fashion trends and lets users create personal style boards.</p>
+                    <div class="arc-tags"><span class="tag">Web App</span></div>
+                    <a class="arc-link" href="https://siddardhashayini.github.io/FashionMate/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
 
-            <div class="project">
-                <h4>Expense Tracker</h4>
-                <p>Manage your finances effectively with this easy-to-use income and expense tracking app.</p>
-                <a href="https://siddardhashayini.github.io/Expense-Tracker/" target="_blank">Explore</a>
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Medical Data AI &mdash; Vault</h4>
+                    <p>A scalable graph database system for secure healthcare data management with AI-powered insights.</p>
+                    <div class="arc-tags"><span class="tag">Graph DB</span><span class="tag">Healthcare</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/MedicalDataAI-Vault" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
+
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>Occasion-specific Stylist AI</h4>
+                    <p>Personalized fashion recommendations based on event details.</p>
+                    <div class="arc-tags"><span class="tag">Recommendation</span></div>
+                    <a class="arc-link" href="https://siddardhashayini.github.io/Occasion-specific-Stylist-AI/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
+
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>Expense Tracker</h4>
+                    <p>An easy-to-use income and expense tracking app.</p>
+                    <div class="arc-tags"><span class="tag">Web App</span></div>
+                    <a class="arc-link" href="https://siddardhashayini.github.io/Expense-Tracker/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
+
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>Interior Design Showcase</h4>
+                    <p>Browse stylish interior design ideas to inspire and enhance living spaces.</p>
+                    <div class="arc-tags"><span class="tag">Web App</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/interior_design_showcase" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
+
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>Flashcard App</h4>
+                    <p>A flashcard app for efficient learning, with customizable cards and export options.</p>
+                    <div class="arc-tags"><span class="tag">Web App</span></div>
+                    <a class="arc-link" href="https://siddardhashayini.github.io/Flashcard-App/" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
+
+                <div class="arc-card" data-category="web">
+                    <div class="arc-cat">Web &amp; Apps</div>
+                    <h4>Flutter Experiments</h4>
+                    <p>Flutter concepts including animations, API integration, and responsive design.</p>
+                    <div class="arc-tags"><span class="tag">Flutter</span><span class="tag">Dart</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/flutter_experiments" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
+
             </div>
-
-            <div class="project">
-                <h4>Interior Design Showcase</h4>
-                <p>Browse stylish interior design ideas to inspire and enhance your living spaces.</p>
-                <a href="https://github.com/SiddardhaShayini/interior_design_showcase" target="_blank">Explore</a>
+            <div class="aside-note">
+                Outside of engineering, I write — including <a href="https://siddardhashayini.github.io/Life-s-Odyssey-A-Journey-of-Love-Growth-and-Legacy/" target="_blank" rel="noopener noreferrer">Life's Odyssey</a>, a personal reflection on growth and legacy.
             </div>
+        </div>
+    </section>
 
-            <div class="project">
-                <h4>Flashcard App</h4>
-                <p>A flashcard app designed for efficient learning and memorization, featuring customizable cards and export options.</p>
-                <a href="https://siddardhashayini.github.io/Flashcard-App/" target="_blank">Explore</a>
+    <section id="research">
+        <div class="wrap reveal">
+            <div class="sec-head">
+                <span class="eyebrow">Verification</span>
+                <h2>Research &amp; Profiles</h2>
             </div>
-
-            <div class="project">
-                <h4>Flutter Experiments</h4>
-                <p>Showcasing Flutter concepts like animations, API integration, and responsive design through interactive examples.</p>
-                <a href="https://github.com/SiddardhaShayini/flutter_experiments" target="_blank">Explore</a>
+            <div class="link-row">
+                <a href="https://github.com/SiddardhaShayini" target="_blank" rel="noopener noreferrer" class="pill">
+                    <img src="/assets/icons/github.svg" alt=""><span>GitHub</span>
+                </a>
+                <a href="https://scholar.google.com/citations?hl=en&user=eQvxPZIAAAAJ" target="_blank" rel="noopener noreferrer" class="pill">
+                    <img src="/assets/icons/googlescholar.svg" alt=""><span>Google Scholar</span>
+                </a>
+                <a href="https://orcid.org/0009-0002-6909-073X" target="_blank" rel="noopener noreferrer" class="pill">
+                    <img src="/assets/icons/orcid.svg" alt=""><span>ORCID</span>
+                </a>
+                <a href="https://ieeexplore.ieee.org/author/626245326465493" target="_blank" rel="noopener noreferrer" class="pill">
+                    <img src="/assets/icons/ieee.svg" alt=""><span>IEEE Xplore</span>
+                </a>
+                <a href="https://www.semanticscholar.org/author/Shayini-Siddardha/2445989503" target="_blank" rel="noopener noreferrer" class="pill">
+                    <img src="/assets/icons/semanticscholar.svg" alt=""><span>Semantic Scholar</span>
+                </a>
             </div>
+        </div>
+    </section>
 
-            <div class="project">
-                <h4>Life's Odyssey (Book)</h4>
-                <p>A reflection on life’s journey, celebrating growth, relationships, and the legacy we create through our choices.</p>
-                <a href="https://siddardhashayini.github.io/Life-s-Odyssey-A-Journey-of-Love-Growth-and-Legacy/" target="_blank">Explore</a>
+    <section id="contact" style="border-bottom:none;">
+        <div class="wrap reveal">
+            <div class="sec-head">
+                <span class="eyebrow">Get In Touch</span>
+                <h2>Contact</h2>
             </div>
-            
-        </section>
+            <div class="link-row">
+                <a href="mailto:siddardhashayini3@gmail.com" class="pill">
+                    <img src="/assets/icons/gmail.svg" alt=""><span>Gmail</span>
+                </a>
+                <a href="https://www.linkedin.com/in/siddardha-shayini-734639317/" target="_blank" rel="noopener noreferrer" class="pill">
+                    <img src="/assets/icons/linkedin.svg" alt=""><span>LinkedIn</span>
+                </a>
+                <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="pill">
+                    <span>Resume ↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <section class="contact-section">
-            <h3>Contact Me</h3>
-            <a href="mailto:siddardhashayini9@gmail.com">Gmail</a>
-            <a href="https://www.linkedin.com/in/siddardha-shayini-734639317/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/SiddardhaShayini" target="_blank">GitHub</a>
-            <a href="https://ieeexplore.ieee.org/author/626245326465493" target="_blank">IEEE Xplore</a>
-            <a href="https://orcid.org/0009-0002-6909-073X" target="_blank">ORCiD</a>
-            <a href="https://scholar.google.com/citations?hl=en&user=eQvxPZIAAAAJ" target="_blank">Google Scholar</a>
-            <a href="https://www.semanticscholar.org/author/Shayini-Siddardha/2445989503" target="_blank">Semantic Scholar</a>
-        </section>
+    <footer>
+        <p>EOF // SIDDARDHA SHAYINI — 2026</p>
+    </footer>
 
-        <footer>
-            <p>&copy; 2026 Siddardha Shayini. All rights reserved.</p>
-        </footer>
-    </div>
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('theme');
+
+        // 1. If 'dark' is saved, remove 'light'. Otherwise, keep 'light' (default)
+        if (savedTheme === 'dark') {
+            document.body.classList.remove('light');
+        } else {
+            document.body.classList.add('light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            // 2. Save current preference
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+        // Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const archiveCards = document.querySelectorAll('.arc-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                archiveCards.forEach(card => {
+                    const show = filter === 'all' || card.dataset.category === filter;
+                    card.classList.toggle('hidden', !show);
+                });
+            });
+        });
+
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(el => io.observe(el));
+        } else {
+            revealEls.forEach(el => el.classList.add('visible'));
+        }
+    </script>
+
 </body>
 </html>
