@@ -9,8 +9,8 @@
 
     <!-- Primary Metadata -->
     <title>Siddardha Shayini | AI/ML Engineer & Software Developer Portfolio</title>
-    <meta name="description" content="Portfolio of Siddardha Shayini – AI/ML Engineer & Software Developer specializing in Generative AI, Computer Vision, and full-stack web applications. View IEEE-published research & projects.">
-    <meta name="keywords" content="Siddardha Shayini, Siddu Shayini, Siddardha, Shayini, Portfolio, Developer, AI, ML, NLP, DL, IEEE, Machine Learning, Artificial Intelligence, GenAI, RAG, Computer Vision">
+    <meta name="description" content="Portfolio of Siddardha Shayini – AI/ML Engineer and creator of FastAgent, a hardware-adaptive local LLM inference orchestrator. Generative AI, Computer Vision, edge AI, IEEE-published research.">
+    <meta name="keywords" content="Siddardha Shayini, Siddu Shayini, Siddardha, Shayini, Portfolio, Developer, AI, ML, NLP, DL, IEEE, Machine Learning, Artificial Intelligence, GenAI, RAG, Computer Vision, FastAgent, Edge AI, Local LLM, llama.cpp, Agentic AI">
     <meta name="author" content="Siddardha Shayini">
 
     <!-- Favicon (Browser Tab) -->
@@ -20,7 +20,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://siddardhashayini.github.io/SiddardhaShayini/">
     <meta property="og:title" content="Siddardha Shayini | AI/ML Engineer & Software Developer">
-    <meta property="og:description" content="Explore AI/ML projects, GenAI & RAG implementations, dynamic web apps, and published research by Siddardha Shayini.">
+    <meta property="og:description" content="Creator of FastAgent (edge LLM inference orchestrator), plus AI/ML projects, GenAI & RAG implementations, and published research by Siddardha Shayini.">
     <meta property="og:image" content="https://siddardhashayini.github.io/SiddardhaShayini/assets/images/picture.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="300">
@@ -29,7 +29,7 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Siddardha Shayini | AI/ML Engineer & Software Developer">
-    <meta name="twitter:description" content="Explore AI/ML projects, GenAI & RAG implementations, dynamic web apps, and published research by Siddardha Shayini.">
+    <meta name="twitter:description" content="Creator of FastAgent (edge LLM inference orchestrator), plus AI/ML projects, GenAI & RAG implementations, and published research by Siddardha Shayini.">
     <meta name="twitter:image" content="https://siddardhashayini.github.io/SiddardhaShayini/assets/images/picture.png">
 
     <!-- Structured data for search engines -->
@@ -39,13 +39,15 @@
       "@type": "Person",
       "name": "Siddardha Shayini",
       "jobTitle": "AI/ML Engineer",
-      "url": "https://siddardhashayini.github.io/",
+      "url": "https://siddardhashayini.github.io/SiddardhaShayini/",
+      "alumniOf": "Vignan Institute of Technology and Science",
       "sameAs": [
         "https://github.com/SiddardhaShayini",
         "https://www.linkedin.com/in/siddardha-shayini-734639317/",
         "https://scholar.google.com/citations?hl=en&user=eQvxPZIAAAAJ",
         "https://orcid.org/0009-0002-6909-073X",
-        "https://ieeexplore.ieee.org/author/626245326465493"
+        "https://ieeexplore.ieee.org/author/626245326465493",
+        "https://doi.org/10.5281/zenodo.22918273"
       ]
     }
     </script>
@@ -162,6 +164,10 @@
 
         .nav-toggle { display: none; }
 
+        @media (max-width: 860px) {
+            .nav-links { gap: 16px; }
+        }
+
         @media (max-width: 760px) {
             .nav-links { display: none; }
             .nav-toggle {
@@ -221,7 +227,7 @@
         .hero h1 em { font-style: italic; font-weight: 400; color: var(--moss); }
 
         .hero .lede {
-            max-width: 640px;
+            max-width: 660px;
             font-size: 1.1rem;
             color: var(--ink-dim);
             margin-bottom: 34px;
@@ -377,10 +383,20 @@
             margin-bottom: 10px;
         }
 
-        .log-meta .todo { color: var(--amber-dim); border-bottom: 1px dashed var(--amber-dim); }
-
         .log-entry p { color: var(--ink-dim); max-width: 62ch; font-size: 0.95rem; }
-        .log-entry p .todo { color: var(--amber-dim); border-bottom: 1px dashed var(--amber-dim); }
+
+        .log-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            color: var(--ink);
+            border-bottom: 1px solid var(--amber);
+            padding-bottom: 1px;
+        }
+        .log-link:hover { color: var(--amber); }
 
         @media (max-width: 560px) {
             .log-entry { grid-template-columns: 1fr; gap: 6px; }
@@ -424,11 +440,72 @@
 
         .case-card:hover { border-color: var(--moss); transform: translateY(-3px); }
 
+        /* Flagship card spans full width */
+        .case-card.flagship {
+            grid-column: 1 / -1;
+            border-color: var(--amber-dim);
+            background: linear-gradient(135deg, var(--panel) 0%, var(--panel-2) 100%);
+        }
+
+        .case-card.flagship:hover { border-color: var(--amber); }
+
+        .flagship-body {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .bench {
+            border: 1px solid var(--line);
+            background: var(--bg);
+            padding: 16px 18px;
+            border-radius: var(--radius);
+        }
+
+        .bench-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--moss);
+            margin-bottom: 12px;
+        }
+
+        .bench-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            padding: 8px 0;
+            border-top: 1px dashed var(--line);
+            font-size: 0.82rem;
+            color: var(--ink-dim);
+        }
+        .bench-row:first-of-type { border-top: none; }
+
+        .bench-row .val {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.78rem;
+            text-align: right;
+        }
+
+        .bench-row .val s { color: var(--ink-dim); opacity: 0.7; margin-right: 6px; }
+        .bench-row .val b { color: var(--amber); font-weight: 500; }
+
+        .case-links { display: flex; flex-wrap: wrap; gap: 20px; }
+
+        @media (max-width: 860px) {
+            .flagship-body { grid-template-columns: 1fr; gap: 22px; }
+        }
+
         .case-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 14px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .case-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--amber); }
@@ -451,6 +528,8 @@
             margin-bottom: 10px;
         }
 
+        .case-card.flagship h3 { font-size: 1.7rem; }
+
         .case-card p { color: var(--ink-dim); font-size: 0.94rem; margin-bottom: 18px; }
 
         .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
@@ -463,6 +542,8 @@
             padding: 4px 9px;
             border-radius: var(--radius);
         }
+
+        .case-card.flagship .tag { background: var(--bg); }
 
         .case-link {
             font-family: 'IBM Plex Mono', monospace;
@@ -574,6 +655,38 @@
         }
         .sub-label:first-child { margin-top: 0; }
 
+        /* Publications list */
+        .pub-list { display: grid; gap: 16px; margin-bottom: 36px; }
+
+        .pub-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--amber);
+            padding: 20px 22px;
+            border-radius: var(--radius);
+        }
+
+        .pub-venue {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.66rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--moss);
+            margin-bottom: 8px;
+        }
+
+        .pub-card h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 1.12rem;
+            line-height: 1.35;
+            margin-bottom: 8px;
+        }
+
+        .pub-card p { color: var(--ink-dim); font-size: 0.88rem; margin-bottom: 12px; max-width: 78ch; }
+
+        .pub-links { display: flex; flex-wrap: wrap; gap: 18px; }
+
         /* ---------- Hero social badges ---------- */
         .hero-social-row {
             display: flex;
@@ -684,6 +797,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#archive">Archive</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div style="display:flex;align-items:center;gap:10px;">
@@ -703,16 +817,19 @@
     <header class="hero">
         <div class="wrap">
             <div class="status-line"><span class="dot"></span> Open to AI/ML engineering roles &middot; Hyderabad, IN</div>
-            <h1>Siddardha Shayini<br><em>builds systems that notice things.</em></h1>
+            <h1>Siddardha Shayini<br><em>builds systems that hold up.</em></h1>
             <p class="lede">
-                I'm an AI/ML engineer working across <strong>computer vision</strong> and <strong>generative AI</strong> —
-                from a real-time wildlife-conflict detection system published in IEEE Xplore, to offline-first AI
-                companions that don't depend on a network connection. I care more about whether a system holds up
-                under real conditions than whether the demo looks good.
+                I'm an AI/ML engineer and the creator of <strong>FastAgent</strong>, an open-source orchestrator that
+                runs local LLM agents on 8&nbsp;GB CPU-only hardware, cutting prompt latency from ~3,500&nbsp;ms to
+                ~73&nbsp;ms with zero OOM crashes. I also work in <strong>computer vision</strong> and
+                <strong>generative AI</strong>, including a real-time wildlife-conflict detection system published in
+                IEEE Xplore. I care more about whether a system holds up under real conditions than whether the demo
+                looks good.
             </p>
             <div class="cta-row">
                 <a href="./assets/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Resume</a>
                 <a href="#work" class="btn btn-ghost">View Case Files</a>
+                <a href="https://doi.org/10.5281/zenodo.22918273" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Read the FastAgent Paper</a>
             </div>
             <div class="hero-social-row">
                 <a href="https://github.com/SiddardhaShayini" target="_blank" rel="noopener noreferrer" class="hero-social-badge">
@@ -733,9 +850,10 @@
             </div>
             <br>
             <div class="stat-row">
-                <div class="stat-chip"><b>24</b> projects logged</div>
-                <div class="stat-chip"><b>1</b> IEEE Xplore publication</div>
-                <div class="stat-chip"><b>5</b> internships</div>
+                <div class="stat-chip"><b>25</b> projects logged</div>
+                <div class="stat-chip"><b>2</b> publications (IEEE Xplore + Zenodo)</div>
+                <div class="stat-chip"><b>6</b> internships</div>
+                <div class="stat-chip"><b>1</b> merged open-source PR</div>
             </div>
         </div>
     </header>
@@ -748,18 +866,21 @@
                 </div>
                 <div class="about-text">
                     <span class="eyebrow">About</span>
-                    <h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:1.9rem;margin:10px 0 18px;">Software developer, AI/ML engineer</h2>
+                    <h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:1.9rem;margin:10px 0 18px;">AI/ML engineer, open-source maintainer</h2>
                     <p>
                         I graduated with a B.Tech in CSE (AI &amp; ML) from Vignan Institute of Technology and Science,
-                        Hyderabad, and I'm currently looking for my first full-time role in AI/ML engineering.
-                        <strong>WildGuardAI</strong>, my flagship project, predicts human&ndash;wildlife conflict in real
-                        time by analyzing detection, movement, and proximity from camera-trap-style footage — the work
-                        was published in IEEE Xplore.
+                        Hyderabad, and I'm looking for my first full-time role in AI/ML and software engineering.
+                        Right now I'm the creator and maintainer of <strong>FastAgent</strong>, a hardware-adaptive
+                        inference orchestrator for running autonomous ReAct agents on constrained edge devices.
+                        The accompanying research paper is on Zenodo.
                     </p>
                     <p>
-                        Most of what I build tries to work with real constraints: <strong>JivanMitra</strong> and my
-                        research-agent projects run fully offline, because I'm more interested in systems that hold up
-                        without a safety net than ones that only work with an API key and a stable connection.
+                        Before that, <strong>WildGuardAI</strong> predicted human&ndash;wildlife conflict in real
+                        time from camera-trap-style footage, and was published in IEEE Xplore. Most of what I build
+                        works within real constraints: <strong>JivanMitra</strong>, my personal AI agent, and my
+                        research-agent projects run local-first and offline, because I'm more interested in systems
+                        that hold up without a safety net than ones that only work with an API key and a stable
+                        connection.
                     </p>
                 </div>
             </div>
@@ -773,6 +894,32 @@
                 <h2>Experience</h2>
             </div>
             <div class="reveal">
+                <div class="log-entry">
+                    <div class="log-index">NOW</div>
+                    <div>
+                        <h3>Creator &amp; Open Source Maintainer &mdash; FastAgent</h3>
+                        <div class="log-meta">Jun 2026 &ndash; Present &middot; Open Source</div>
+                        <p>Designed, built, and open-sourced a hardware-adaptive local LLM inference orchestrator that runs autonomous ReAct agents on CPU-only, 8&nbsp;GB RAM devices. Wraps the <code>llama.cpp</code> server with Longest Common Prefix slot caching, 8-bit KV-cache quantization, GBNF grammar-constrained JSON output, and an adaptive compute controller, cutting steady-state prompt evaluation from ~3,500&nbsp;ms to ~73&nbsp;ms per turn with zero OOM terminations. Maintains the repository, contribution guidelines, and benchmarks.</p>
+                        <a class="log-link" href="https://github.com/SiddardhaShayini/Optimizing-Local-AI-Agents" target="_blank" rel="noopener noreferrer">View repository &rarr;</a>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <div class="log-index">LOG-06</div>
+                    <div>
+                        <h3>Machine Learning &amp; AI Intern &mdash; Skill Nexis</h3>
+                        <div class="log-meta">Aug 2026 &ndash; Sep 2026 &middot; Remote</div>
+                        <p>Worked on machine learning models and related hands-on AI/ML tasks as part of a remote internship.</p>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <div class="log-index">OSS</div>
+                    <div>
+                        <h3>Open Source Contributor &mdash; sklearn-genetic-opt</h3>
+                        <div class="log-meta">Sep 2025 &ndash; Mar 2026 &middot; Open Source</div>
+                        <p>Documented parallel processing with <code>n_jobs</code> in <code>GASearchCV</code>. Pull request #178 merged, resolving Issue #152.</p>
+                        <a class="log-link" href="https://github.com/rodrigo-arenas/Sklearn-genetic-opt/pull/178" target="_blank" rel="noopener noreferrer">View pull request &rarr;</a>
+                    </div>
+                </div>
                 <div class="log-entry">
                     <div class="log-index">EDU</div>
                     <div>
@@ -849,6 +996,7 @@
                         <span class="chip">scikit-learn</span>
                         <span class="chip">LLMs</span>
                         <span class="chip">RAG</span>
+                        <span class="chip">Agentic AI</span>
                         <span class="chip">NLP</span>
                         <span class="chip">Prompt Engineering</span>
                         <span class="chip">Vector Embeddings</span>
@@ -858,14 +1006,31 @@
                     </div>
                 </div>
                 <div class="skill-group">
+                    <span class="eyebrow">Edge &amp; Local LLM Inference</span>
+                    <div class="chip-row">
+                        <span class="chip">llama.cpp</span>
+                        <span class="chip">Ollama</span>
+                        <span class="chip">KV-Cache Quantization</span>
+                        <span class="chip">Prefix Caching</span>
+                        <span class="chip">GBNF Grammars</span>
+                        <span class="chip">ReAct Agents</span>
+                        <span class="chip">GGUF Models</span>
+                    </div>
+                </div>
+                <div class="skill-group">
                     <span class="eyebrow">Frameworks &amp; Tools</span>
                     <div class="chip-row">
+                        <span class="chip">FastAPI</span>
                         <span class="chip">Flask</span>
                         <span class="chip">LangChain</span>
+                        <span class="chip">LangGraph</span>
+                        <span class="chip">React</span>
                         <span class="chip">Node.js</span>
                         <span class="chip">Streamlit</span>
                         <span class="chip">Git / GitHub</span>
                         <span class="chip">SQLite</span>
+                        <span class="chip">LanceDB</span>
+                        <span class="chip">ChromaDB</span>
                         <span class="chip">SQL / NoSQL</span>
                         <span class="chip">Vector Databases</span>
                     </div>
@@ -878,15 +1043,19 @@
                         <span class="chip">Databricks Fundamentals</span>
                         <span class="chip">Time-Series Forecasting</span>
                         <span class="chip">Deep Learning</span>
+                        <span class="chip">Open Source Maintenance</span>
                         <span class="chip">Flutter (basics)</span>
                     </div>
                 </div>
                 <div class="skill-group">
-                    <span class="eyebrow">Certifications</span>
+                    <span class="eyebrow">Certifications &amp; Training</span>
                     <div class="chip-row">
+                        <span class="chip">Oracle Certified Foundations Associate &mdash; Agentic AI</span>
+                        <span class="chip">Deep Research with LangGraph &mdash; LangChain Academy</span>
+                        <span class="chip">Hugging Face Agents Course</span>
+                        <span class="chip">Databricks Fundamentals &mdash; Databricks Academy</span>
+                        <span class="chip">NESTGEN E-Learning Festival 2026</span>
                         <span class="chip">TCS iON NQT (IT) &mdash; Qualified</span>
-                        <span class="chip">Oracle Agentic AI Foundations Associate</span>
-                        <span class="chip">Oracle Certified Foundations Associate</span>
                         <span class="chip">NPTEL &mdash; Programming with Generative AI</span>
                         <span class="chip">Coursera &mdash; Cloud ML Engineering &amp; MLOps</span>
                     </div>
@@ -903,13 +1072,48 @@
             </div>
             <div class="case-grid reveal">
 
+                <!-- FLAGSHIP: FastAgent -->
+                <div class="case-card flagship">
+                    <div class="case-top">
+                        <span class="case-id">LOG-00 &middot; Jun 2026&ndash;Present</span>
+                        <span class="case-status">Open Source &middot; Actively Maintained</span>
+                    </div>
+                    <div class="flagship-body">
+                        <div>
+                            <h3>FastAgent</h3>
+                            <p>A hardware-adaptive local LLM inference orchestrator that runs autonomous ReAct agents on CPU-only, 8&nbsp;GB RAM devices. Naive local agent loops re-evaluate the system prompt every turn and let context grow until memory runs out. FastAgent wraps the <code>llama.cpp</code> server with <strong>Longest Common Prefix slot caching</strong>, <strong>8-bit KV-cache quantization</strong>, <strong>rolling context windows</strong>, <strong>GBNF grammar-constrained decoding</strong> that forces valid JSON even from sub-3B models, and an <strong>Adaptive Compute Controller</strong> that scales token budgets and temperature by prompt complexity. It registers Python functions as tools and handles system prompts and tool routing itself.</p>
+                            <div class="tag-row">
+                                <span class="tag">llama.cpp</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">KV-Cache Quantization</span>
+                                <span class="tag">Prefix Caching</span>
+                                <span class="tag">GBNF</span>
+                                <span class="tag">ReAct</span>
+                                <span class="tag">Streamlit</span>
+                                <span class="tag">MIT License</span>
+                            </div>
+                            <div class="case-links">
+                                <a class="case-link" href="https://github.com/SiddardhaShayini/Optimizing-Local-AI-Agents" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
+                                <a class="case-link" href="https://doi.org/10.5281/zenodo.22918273" target="_blank" rel="noopener noreferrer">Read the paper &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="bench">
+                            <div class="bench-title">Benchmark &middot; CPU-only, 8 GB RAM</div>
+                            <div class="bench-row"><span>Prompt eval latency</span><span class="val"><s>~3,500 ms</s><b>~73 ms</b></span></div>
+                            <div class="bench-row"><span>KV-cache precision</span><span class="val"><s>f16</s><b>q8_0</b></span></div>
+                            <div class="bench-row"><span>Long tool loops</span><span class="val"><s>OOM</s><b>0 OOM failures</b></span></div>
+                            <div class="bench-row"><span>Output format</span><span class="val"><s>malformed JSON</s><b>grammar-valid</b></span></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="case-card">
                     <div class="case-top">
                         <span class="case-id">LOG-01 &middot; Aug 2025&ndash;Jun 2026</span>
                         <span class="case-status">IEEE Xplore &middot; Published</span>
                     </div>
                     <h3>WildGuardAI</h3>
-                    <p>Deep learning system using YOLOv12n, BoT-SORT, and a Kalman Filter to detect animals crossing forest boundaries from live camera feeds. Flask backend with SQLite and GPS-based alerting notifies forest officers and villagers before dangerous encounters happen. Published in IEEE Xplore as <em>"Wild Guard AI: Real-Time Wildlife Conflict Prediction"</em> (2026).</p>
+                    <p>Deep learning system using YOLOv12n, BoT-SORT, and a Kalman Filter to detect animals crossing forest boundaries from live camera feeds. Flask backend with SQLite and GPS-based alerting notifies forest officers and villagers before dangerous encounters happen. Published in IEEE Xplore as <em>"Wild Guard AI: Real-Time Wildlife Conflict Prediction"</em> (2026), and presented at ICICI 2026.</p>
                     <div class="tag-row">
                         <span class="tag">YOLOv12n</span>
                         <span class="tag">BoT-SORT</span>
@@ -926,10 +1130,11 @@
                         <span class="case-status">Active Development</span>
                     </div>
                     <h3>JivanMitra</h3>
-                    <p>Offline, voice-only AI caretaker for elderly users in India. Uses LangChain RAG, LLMs, and NLP to hold context-aware, multilingual conversations in local languages, without depending on a stable internet connection &mdash; built for accessibility, not tech fluency.</p>
+                    <p>Offline-first, voice-enabled AI companion for elderly users in India. Uses LangChain RAG, agentic AI, LLMs, and NLP to hold context-aware, multilingual conversations in local languages, without depending on a stable internet connection &mdash; built for accessibility, not tech fluency.</p>
                     <div class="tag-row">
                         <span class="tag">LangChain</span>
                         <span class="tag">RAG</span>
+                        <span class="tag">Agentic AI</span>
                         <span class="tag">NLP</span>
                         <span class="tag">Multilingual</span>
                     </div>
@@ -938,7 +1143,22 @@
 
                 <div class="case-card">
                     <div class="case-top">
-                        <span class="case-id">LOG-03 &middot; Dec 2025&ndash;Mar 2026</span>
+                        <span class="case-id">LOG-03 &middot; Local-First</span>
+                        <span class="case-status">Private by Design</span>
+                    </div>
+                    <h3>Personal AI Agent &mdash; Local-First &amp; Private</h3>
+                    <p>A local-first, privacy-focused AI assistant built with Ollama and LanceDB, keeping all data and inference on the user's machine.</p>
+                    <div class="tag-row">
+                        <span class="tag">Ollama</span>
+                        <span class="tag">LanceDB</span>
+                        <span class="tag">Local-First</span>
+                    </div>
+                    <a class="case-link" href="https://github.com/SiddardhaShayini/Personal-AI-Agent" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-top">
+                        <span class="case-id">LOG-04 &middot; Dec 2025&ndash;Mar 2026</span>
                         <span class="case-status">Offline Rewrite</span>
                     </div>
                     <h3>Offline Deep Research Agent</h3>
@@ -951,21 +1171,6 @@
                     <a class="case-link" href="https://github.com/SiddardhaShayini/Offline-Deep-Research-Agent-using-Ollama-Mistral-and-LangChain" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
                 </div>
 
-                <div class="case-card">
-                    <div class="case-top">
-                        <span class="case-id">LOG-04 &middot; Jan&ndash;Apr 2025</span>
-                        <span class="case-status">~93% Accuracy</span>
-                    </div>
-                    <h3>Cyber Crime Forecasting &amp; Analysis in India</h3>
-                    <p>Streamlit dashboard forecasting cybercrime trends across Indian states using ARIMA and Polynomial Regression, reaching ~93% accuracy, to support awareness and policy planning.</p>
-                    <div class="tag-row">
-                        <span class="tag">ARIMA</span>
-                        <span class="tag">Polynomial Regression</span>
-                        <span class="tag">Streamlit</span>
-                    </div>
-                    <a class="case-link" href="https://github.com/SiddardhaShayini/Cyber-Crime-Prediction" target="_blank" rel="noopener noreferrer">Explore on GitHub &rarr;</a>
-                </div>
-
             </div>
         </div>
     </section>
@@ -974,7 +1179,7 @@
         <div class="wrap">
             <div class="sec-head reveal">
                 <span class="eyebrow">Full Archive</span>
-                <h2>19 More Projects</h2>
+                <h2>20 More Projects</h2>
             </div>
 
             <div class="filter-row reveal">
@@ -1041,6 +1246,14 @@
                     <p>Predicts future electricity demand and price from historical data through a modern interface.</p>
                     <div class="arc-tags"><span class="tag">Forecasting</span><span class="tag">ML</span></div>
                     <a class="arc-link" href="https://github.com/SiddardhaShayini/Electricity-Demand-and-Price-Forecasting" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
+                </div>
+
+                <div class="arc-card" data-category="data">
+                    <div class="arc-cat">Data &amp; ML</div>
+                    <h4>Cyber Crime Forecasting &amp; Analysis in India</h4>
+                    <p>Streamlit dashboard forecasting cybercrime trends across Indian states using ARIMA and Polynomial Regression, reaching ~93% accuracy, to support awareness and policy planning.</p>
+                    <div class="arc-tags"><span class="tag">ARIMA</span><span class="tag">Polynomial Regression</span><span class="tag">Streamlit</span></div>
+                    <a class="arc-link" href="https://github.com/SiddardhaShayini/Cyber-Crime-Prediction" target="_blank" rel="noopener noreferrer">Explore &rarr;</a>
                 </div>
 
                 <div class="arc-card" data-category="data">
@@ -1152,6 +1365,29 @@
                 <span class="eyebrow">Verification</span>
                 <h2>Research &amp; Profiles</h2>
             </div>
+
+            <div class="pub-list">
+                <div class="pub-card">
+                    <div class="pub-venue">Preprint &middot; Zenodo &middot; Sep 2026 &middot; CC BY 4.0</div>
+                    <h4>Hardware-Adaptive Inference Orchestration: Zero-Overhead Local LLM Agents on Resource-Constrained Edge Devices</h4>
+                    <p>Presents FastAgent, a headless inference orchestrator combining LCP slot caching, 8-bit KV-cache quantization, grammar-constrained decoding, and an Adaptive Compute Controller. On a CPU-only 8&nbsp;GB baseline, steady-state prompt-evaluation latency fell from ~3,500&nbsp;ms to ~73&nbsp;ms with no OOM failures during long-running tool loops.</p>
+                    <div class="pub-links">
+                        <a class="case-link" href="https://zenodo.org/records/22918273" target="_blank" rel="noopener noreferrer">Read on Zenodo &rarr;</a>
+                        <a class="case-link" href="https://doi.org/10.5281/zenodo.22918273" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.22918273</a>
+                        <a class="case-link" href="https://github.com/SiddardhaShayini/Optimizing-Local-AI-Agents" target="_blank" rel="noopener noreferrer">Source code &rarr;</a>
+                    </div>
+                </div>
+                <div class="pub-card">
+                    <div class="pub-venue">IEEE Xplore &middot; ICICI 2026</div>
+                    <h4>Wild Guard AI: Real-Time Wildlife Conflict Prediction</h4>
+                    <p>Real-time computer vision system using YOLOv12n, BoT-SORT, and a Kalman Filter to predict human&ndash;wildlife conflict from camera feeds, with GPS-based alerts for forest officers and villagers.</p>
+                    <div class="pub-links">
+                        <a class="case-link" href="https://ieeexplore.ieee.org/author/626245326465493" target="_blank" rel="noopener noreferrer">View on IEEE Xplore &rarr;</a>
+                        <a class="case-link" href="https://github.com/SiddardhaShayini/WildGuardAI-Real-Time-Wildlife-Conflict-Prediction" target="_blank" rel="noopener noreferrer">Source code &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="link-row">
                 <a href="https://github.com/SiddardhaShayini" target="_blank" rel="noopener noreferrer" class="pill">
                     <img src="./assets/icons/github.svg" alt=""><span>GitHub</span>
